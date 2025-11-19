@@ -1,0 +1,66 @@
+{
+  "name": "common-agent-core",
+  "version": "1.0.0",
+  "description": "Common Agent Core - NodeJS功能模块",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && pnpm run copy-assets",
+    "copy-assets": "copyfiles -u 1 \"src/**/*.md\" \"src/**/*.json\" dist/",
+    "dev": "ts-node src/index.ts",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "format": "prettier --write \"src/**/*.{ts,js,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,js,json,md}\"",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepare": "pnpm run build"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "agent",
+    "core",
+    "utils"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liubei-ai/CAC.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liubei-ai/CAC/issues"
+  },
+  "homepage": "https://github.com/liubei-ai/CAC#readme",
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0"
+  },
+  "dependencies": {
+    "@azure/openai": "^2.0.0",
+    "@modelcontextprotocol/sdk": "^1.17.5",
+    "dotenv": "^17.2.2",
+    "openai": "^5.19.1",
+    "uuid": "^11.1.0",
+    "zod": "^3.25.76"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.10.0"
+}
